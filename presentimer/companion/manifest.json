@@ -3,7 +3,7 @@
   "name": "presentimer",
   "shortname": "presentimer",
   "description": "Remote Presenter/klicker, Desktopcontrol and Countdowimer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "repository": "https://github.com/QuentinNagel/Presentimer.git",
   "bugs": "https://github.com/QuentinNagel/Presentimer/tree/main/presentimer/companion/issues",
@@ -14,9 +14,9 @@
     }
   ],
   "runtime": {
-    "type": "node22",
+    "type": "node",
     "api": "nodejs-ipc",
-    "apiVersion": "0.0.0",
+    "apiVersion": "2.0.0",
     "entrypoint": "module.js"
   },
   "legacyIds": [],
