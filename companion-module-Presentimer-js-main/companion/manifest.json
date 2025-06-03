@@ -1,0 +1,24 @@
+{
+  "id": "presentimer",
+  "name": "presentimer",
+  "shortname": "pt",
+  "description": "Remote Presenter/klicker, Desktopcontrol and Countdowntimer",
+  "version": "0.0.0",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Quentin Nagel",
+      "email": "quentin.nagel@quentech.de"
+    }
+  ],
+  "runtime": {
+    "type": "node22",
+    "api": "nodejs-ipc",
+    "apiVersion": "0.0.0",
+    "entrypoint": "module.js"
+  },
+  "legacyIds": [],
+  "manufacturer": "Quentech",
+  "products": ["Presentimer"],
+  "keywords": []
+}
