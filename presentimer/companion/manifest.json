@@ -1,10 +1,12 @@
 {
   "id": "presentimer",
   "name": "presentimer",
-  "shortname": "pt",
-  "description": "Remote Presenter/klicker, Desktopcontrol and Countdowntimer",
+  "shortname": "presentimer",
+  "description": "Remote Presenter/klicker, Desktopcontrol and Countdowimer",
   "version": "0.0.0",
   "license": "MIT",
+  "repository": "https://github.com/QuentinNagel/Presentimer.git",
+  "bugs": "https://github.com/QuentinNagel/Presentimer/issues",
   "maintainers": [
     {
       "name": "Quentin Nagel",
