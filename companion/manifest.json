@@ -5,7 +5,7 @@
 	"description": "emote Presenter/klicker, Desktopcontrol and Countdowimer",
 	"version": "0.1.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/QuentinNagel/Presentimer.git",
+	"repository": "https://github.com/bitfocus/companion-module-presentimer/issues",
 	"bugs": "https://github.com/QuentinNagel/Presentimer/tree/main/presentimer/companion/issues",
 	"maintainers": [
 		{
