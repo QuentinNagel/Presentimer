@@ -1,6 +1,6 @@
 const { combineRgb } = require('@companion-module/base')
 
-module.exports = function (self) {
+module.exports = async function (self) {
 	self.setFeedbackDefinitions({
 		ChannelState: {
 			name: 'Example Feedback',

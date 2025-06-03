@@ -1,0 +1,26 @@
+{
+	"id": "presentimer",
+	"name": "presentimer",
+	"shortname": "presentimer",
+	"description": "emote Presenter/klicker, Desktopcontrol and Countdowimer",
+	"version": "0.1.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/QuentinNagel/Presentimer.git",
+	"bugs": "https://github.com/QuentinNagel/Presentimer/tree/main/presentimer/companion/issues",
+	"maintainers": [
+		{
+			"name": "Quentin Nagel",
+			"email": "quentin.nagel@quentech.de"
+		}
+	],
+	"runtime": {
+		"type": "node22",
+		"api": "nodejs-ipc",
+		"apiVersion": "2.0.0",
+		"entrypoint": "../main.js"
+	},
+	"legacyIds": [],
+	"manufacturer": "Quentech",
+	"products": ["Presentimer"],
+	"keywords": []
+}
