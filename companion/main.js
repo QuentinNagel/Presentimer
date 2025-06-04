@@ -15,7 +15,30 @@ class ModuleInstance extends InstanceBase {
 
         this.updateStatus(InstanceStatus.Ok)
 
-        this.createSocketAndConnect()
+        this.socket = new net.Socket()
+
+        this.socket.on('error', (err) => {
+            this.log('error', `Socket error: ${err.message}`)
+        })
+
+        this.socket.on('close', () => {
+            this.log('warn', 'Socket closed')
+        })
+
+        try {
+            this.socket.connect(
+                Number(this.config.port),
+                this.config.host,
+                () => {
+                    this.log('info', `Connected to ${this.config.host}:${this.config.port}`)
+                    this.updateStatus(InstanceStatus.Ok)
+                }
+            )
+            this.log('debug', `Trying to connect to ${this.config.host}:${this.config.port}`);
+        } catch (err) {
+            this.log('error', `Connect exception: ${err.message}`)
+            this.log('debug', `Catch block executed while trying to connect to ${this.config.host}:${this.config.port}`);
+        }
 
         this.updateActions() // export actions
         this.updateFeedbacks() // export feedbacks
@@ -73,41 +96,6 @@ class ModuleInstance extends InstanceBase {
 
     updateVariableDefinitions() {
         UpdateVariableDefinitions(this)
-    }
-
-    createSocketAndConnect() {
-        if (this.socket) {
-            this.socket.destroy()
-        }
-        this.socket = new net.Socket()
-
-        this.socket.on('error', (err) => {
-            this.log('error', `Socket error: ${err.message}`)
-        })
-
-        this.socket.on('close', () => {
-            this.log('warn', 'Socket closed, retrying in 5 seconds')
-            setTimeout(() => {
-                this.createSocketAndConnect()
-            }, 5000)
-        })
-
-        try {
-            this.log('debug', `Trying to connect to ${this.config.host}:${this.config.port}`)
-            this.socket.connect(
-                Number(this.config.port),
-                this.config.host,
-                () => {
-                    this.log('info', `Connected to ${this.config.host}:${this.config.port}`)
-                    this.updateStatus(InstanceStatus.Ok)
-                }
-            )
-        } catch (err) {
-            this.log('error', `Connect exception: ${err.message}`)
-            setTimeout(() => {
-                this.createSocketAndConnect()
-            }, 5000)
-        }
     }
 }
 
