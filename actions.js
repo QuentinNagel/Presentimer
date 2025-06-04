@@ -164,13 +164,31 @@ module.exports = function (self) {
                     default: '',
                     choices: [
                         { id: '', label: 'Custom...' },
-                        { id: 'Enter', label: 'Enter' },
-                        { id: 'Space', label: 'Space' },
-                        { id: 'Left', label: 'Arrow Left' },
-                        { id: 'Right', label: 'Arrow Right' },
-                        { id: 'Up', label: 'Arrow Up' },
-                        { id: 'Down', label: 'Arrow Down' },
-                        { id: 'F4', label: 'F4' },
+                        // Zahlen
+                        { id: '1', label: '1' },
+                        { id: '2', label: '2' },
+                        { id: '3', label: '3' },
+                        { id: '4', label: '4' },
+                        { id: '5', label: '5' },
+                        { id: '6', label: '6' },
+                        { id: '7', label: '7' },
+                        { id: '8', label: '8' },
+                        { id: '9', label: '9' },
+                        { id: '0', label: '0' },
+                        // Steuerung & Sondertasten
+                        { id: 'Enter', label: 'Enter (Enter)' },
+                        { id: 'cmdEnter', label: 'Enter (cmdEnter)' },
+                        { id: 'cmdQ', label: 'cmdQ' },
+                        { id: 'cmd', label: 'cmd' },
+                        { id: 'cmdEsc', label: 'Escape (esc)' },
+                        { id: ' ', label: 'Leertaste ( )' },      // wirklich ein Space!
+                        // Pfeiltasten
+                        { id: '←', label: 'Arrow Left (←)' },
+                        { id: '→', label: 'Arrow Right (→)' },
+                        { id: '↑', label: 'Arrow Up (↑)' },
+                        { id: '↓', label: 'Arrow Down (↓)' },
+                        // Vollbild
+                        { id: 'ctrlCmdF', label: 'Vollbild (ctrlCmdF)' },
                     ],
                 },
                 {

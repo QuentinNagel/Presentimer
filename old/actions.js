@@ -60,9 +60,10 @@ module.exports = function (self) {
                 {
                     id: 'remaining',
                     type: 'number',
-                    label: 'Remaining Time (seconds)',
-                    default: 0,
+                    label: 'Remaining Time (seconds, optional – leave blank to use current timer value)',
+                    default: null,
                     min: 0,
+                    optional: true,
                 },
             ],
             callback: async function (event) {
@@ -70,7 +71,9 @@ module.exports = function (self) {
                 const message = {
                     command: 'timerStart',
                     index: event.options.timerIndex,
-                    remaining: event.options.remaining !== undefined ? event.options.remaining : 0,
+                }
+                if (event.options.remaining !== null && event.options.remaining !== undefined && event.options.remaining !== '') {
+                    message.remaining = event.options.remaining
                 }
                 self.log('debug', 'Sending message: ' + JSON.stringify(message))
                 self.sendAppMessage(message)
